@@ -5,7 +5,9 @@ class NavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Row(
-      children: [
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      
+      children:<Widget> [
         Container(
           height: 200,
           width: 200,
@@ -17,23 +19,23 @@ class NavigationBar extends StatelessWidget {
             ),
           ),
         ),
-
-        Row(
-          children: [
-            NavBarItem('Products'),
-            SizedBox(width:10),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Row(
             
-            NavBarItem('About'),
-            SizedBox(width:10),
-            
-            NavBarItem('Services'),
-            SizedBox(width:10),
-
-            NavBarItem('Customer Care'),
-            SizedBox(width:10),
-          ],
+           mainAxisSize: MainAxisSize.min,
+            children: [
+              NavBarItem('Products'),
+              SizedBox(width: 10),
+              NavBarItem('About'),
+              SizedBox(width: 10),
+              NavBarItem('Services'),
+              SizedBox(width: 10),
+              NavBarItem('Customer Care'),
+              SizedBox(width: 10),
+            ],
+          ),
         )
-
       ],
     ));
   }
@@ -48,7 +50,7 @@ class NavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(fontSize: 16.0, fontFamily: ''),
+      style: TextStyle(fontSize: 18.0, ),
     );
   }
 }
